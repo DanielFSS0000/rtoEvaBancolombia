@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="a86f4ee4e5ab318526070e0486c29691ef01dfaa38c6aca92b93cc907372af50.html">As A User, Buttons Are Located By Coordinates Within A Matrix</a></span>
+                > <span class="truncate-60"><a
+                    href="1ae108520535aaff83368242f185288134f072ef6cf9ee80a43f1df3a9655349.html">Find the correct button in the matrix </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 20-02-2023 09:24</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">As A User, Buttons Are Located By Coordinates Within A Matrix </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                            <div class="requirementNarrative">Background: Login on page
+                                    <p></p>
+                            </div>
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="e0e727b5b6644c8f3cb483e99b843c02eb2334fec16c0b22bee3f4c672b65ca7.html">Scenario
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Find the correct button in the matrix
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5f536dc8389d0b6ea81368128ffb28806d810a662094d22a01df387da24799ef.png" title=" Given Authentication user
+| user | key |
+| 548247 | 10df2f32286b7120My0zLTc0Mjg0NQ==30e0c83e6c29f1c3 |" width="1034"/>
+                <img src="5f536dc8389d0b6ea81368128ffb28806d810a662094d22a01df387da24799ef.png" title=" Daniel open page" width="1034"/>
+                <img src="5f536dc8389d0b6ea81368128ffb28806d810a662094d22a01df387da24799ef.png" title=" Daniel opens the Open url" width="1034"/>
+                <img src="5f536dc8389d0b6ea81368128ffb28806d810a662094d22a01df387da24799ef.png" title=" Daniel open page (completed)" width="1034"/>
+                <img src="5f536dc8389d0b6ea81368128ffb28806d810a662094d22a01df387da24799ef.png" title=" Daniel login" width="1034"/>
+                <img src="5f536dc8389d0b6ea81368128ffb28806d810a662094d22a01df387da24799ef.png" title=" Daniel enters '548247' into Into user" width="1034"/>
+                <img src="1fbee7919085be9021d8cd9f10234d6d293a375205de922e0b87b3c7f44bc7c2.png" title=" Daniel enters '548247' into Into user (completed)" width="1034"/>
+                <img src="1fbee7919085be9021d8cd9f10234d6d293a375205de922e0b87b3c7f44bc7c2.png" title=" Daniel enters '10df2f32286b7120My0zLTc0Mjg0NQ==30e0c83e6c29f1c3' into Into password" width="1034"/>
+                <img src="a74a9342163da0644ad6ed39e8c4f5eed37e8ff76199ea061066d143fe50c717.png" title=" Daniel enters '10df2f32286b7120My0zLTc0Mjg0NQ==30e0c83e6c29f1c3' into Into password (completed)" width="1034"/>
+                <img src="a74a9342163da0644ad6ed39e8c4f5eed37e8ff76199ea061066d143fe50c717.png" title=" Daniel clicks on Button Login" width="1034"/>
+                <img src="0a0c9c1d3a220018d40df2bd3f769842c682d794f435af9cb134077f17ec7051.png" title=" Daniel clicks on Button Login (completed)" width="1034"/>
+                <img src="0a0c9c1d3a220018d40df2bd3f769842c682d794f435af9cb134077f17ec7051.png" title=" Daniel login (completed)" width="1034"/>
+                <img src="0a0c9c1d3a220018d40df2bd3f769842c682d794f435af9cb134077f17ec7051.png" title=" Given Authentication user
+| user | key |
+| 548247 | 10df2f32286b7120My0zLTc0Mjg0NQ==30e0c83e6c29f1c3 | (completed)" width="1034"/>
+                <img src="39e95267f276bf445bba10a0c64b73faf651374d4b11f5c881c6ba161c438122.png" title=" When Calculate the correct coordinate of the button and the sum" width="1034"/>
+                <img src="39e95267f276bf445bba10a0c64b73faf651374d4b11f5c881c6ba161c438122.png" title=" Daniel button" width="1034"/>
+                <img src="39e95267f276bf445bba10a0c64b73faf651374d4b11f5c881c6ba161c438122.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="a6b11bc325f2124f39f48959cd3d1382c2d8a97b327b4717a3c40ecfc3ca092f.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="a6b11bc325f2124f39f48959cd3d1382c2d8a97b327b4717a3c40ecfc3ca092f.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="15248e0885fa38898a18b942172436329a1774b90e6b4e40f7f07aacb24c77dc.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="15248e0885fa38898a18b942172436329a1774b90e6b4e40f7f07aacb24c77dc.png" title=" Daniel enters '1439' into TEXT Suma" width="1034"/>
+                <img src="0e10a7a02b94a194e53d660b6eb0510a129ca661e415409e931842dad508b3a6.png" title=" Daniel enters '1439' into TEXT Suma (completed)" width="1034"/>
+                <img src="0e10a7a02b94a194e53d660b6eb0510a129ca661e415409e931842dad508b3a6.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="fab9f624626dbce6a2e957e608d4e3ec6cd63f2848d60a6cdedbb00b0514c9ed.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="a02563043b74ef5fc2e025e1ce2e0d51a237242446349eac85eb97257cb0b96c.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="9bbc1428019d81c3576f21787cf578ad8852d05613ed99760a3a085af4e37684.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="9bbc1428019d81c3576f21787cf578ad8852d05613ed99760a3a085af4e37684.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="4a11167ba3e184941f990d3deb7381949f20218b58c449c019d5dfcc95acbddb.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="4a11167ba3e184941f990d3deb7381949f20218b58c449c019d5dfcc95acbddb.png" title=" Daniel enters '1681' into TEXT Suma" width="1034"/>
+                <img src="3bdfda85c89f79b1da61872c2c6a4f5dc9fdb9e6465052bc458c5b90b1da290b.png" title=" Daniel enters '1681' into TEXT Suma (completed)" width="1034"/>
+                <img src="3bdfda85c89f79b1da61872c2c6a4f5dc9fdb9e6465052bc458c5b90b1da290b.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="f36bec9cab99bf0b9edfc555a75779f7aca1a67d4aa29ddb6fc0db32424c1d39.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="c424c12a8a828483db1e39022891e8f97108d99d23d18c3bbe7b6fd0f3e986cc.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="3b841b878b088a9ec4d60f61b4c0cddbb40fd9e852090cb7a73c9bfddd6103d1.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="3b841b878b088a9ec4d60f61b4c0cddbb40fd9e852090cb7a73c9bfddd6103d1.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="85218e066c03fa02e081fb7cfd11eed4dcf84877665cff0b0f9686361656f70f.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="85218e066c03fa02e081fb7cfd11eed4dcf84877665cff0b0f9686361656f70f.png" title=" Daniel enters '1668' into TEXT Suma" width="1034"/>
+                <img src="f9c40df2b84f4da8b045a7215706e2c382eb7d1e1841f4049da9eed0b7b6fdf9.png" title=" Daniel enters '1668' into TEXT Suma (completed)" width="1034"/>
+                <img src="f9c40df2b84f4da8b045a7215706e2c382eb7d1e1841f4049da9eed0b7b6fdf9.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="a9272acdddfa24fd5661d6d3f865a9f44c53ade6dd448368f9416fac71669d05.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="e71a950cebd61f471f0d2e7afc6635b753d9a148a6ab3aeddb207583e790266b.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="f6562ed306952111de66c578ede2076c8c18286396e6b73dd974ea183d78e8ac.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="f6562ed306952111de66c578ede2076c8c18286396e6b73dd974ea183d78e8ac.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="0f68277657cc50d2d1560d7a0b76ae4687af714301949acde3bae08a7490fc1c.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="0f68277657cc50d2d1560d7a0b76ae4687af714301949acde3bae08a7490fc1c.png" title=" Daniel enters '1136' into TEXT Suma" width="1034"/>
+                <img src="119ef2f00d426a715c1fb91d6170560cee20065df487ebdf47cc285adc1e959b.png" title=" Daniel enters '1136' into TEXT Suma (completed)" width="1034"/>
+                <img src="119ef2f00d426a715c1fb91d6170560cee20065df487ebdf47cc285adc1e959b.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="a0345490384a92664896c78536c4035c8c6a42b455abcd8a22bcccad6672a050.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="97fde30446d4b2777b2c3f262cc98d80f8e4bb0232f782309af5d0eb6b7fc383.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="8325ed800e85faf3e3c255902604bc7576804283088e3741333c117894c51fd5.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="8325ed800e85faf3e3c255902604bc7576804283088e3741333c117894c51fd5.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="cfd02b78c1721243ffad4024ccaf8e752eb5c93ea7f0833a12def970bef0c61a.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="cfd02b78c1721243ffad4024ccaf8e752eb5c93ea7f0833a12def970bef0c61a.png" title=" Daniel enters '1726' into TEXT Suma" width="1034"/>
+                <img src="8205c938ced4cb518ababdf5b4d2b6283b67a3f8ffd98047982d6e8ac4bbe519.png" title=" Daniel enters '1726' into TEXT Suma (completed)" width="1034"/>
+                <img src="8205c938ced4cb518ababdf5b4d2b6283b67a3f8ffd98047982d6e8ac4bbe519.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="6288823b343bc4c7f1ba2613d8e34b1b64335222dafd75b2df26748739b68056.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="1d96d9a209b4206aa425b0819580d2affe6a3d9524f36ed912231c07b0217c54.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="68e3359d3de0edf25689a68632690b3ff4265dd89642d5532b224e1603bb4327.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="68e3359d3de0edf25689a68632690b3ff4265dd89642d5532b224e1603bb4327.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="a77e6236bc2f8cf99d1f424be351bf8f03699ddccf25232c47e93f2e6985656e.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="a77e6236bc2f8cf99d1f424be351bf8f03699ddccf25232c47e93f2e6985656e.png" title=" Daniel enters '1512' into TEXT Suma" width="1034"/>
+                <img src="54d4d4826e48f8edc85113571d07f407f46eb596661d4446e68d52c1c9b2abb9.png" title=" Daniel enters '1512' into TEXT Suma (completed)" width="1034"/>
+                <img src="54d4d4826e48f8edc85113571d07f407f46eb596661d4446e68d52c1c9b2abb9.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="67a742b25797436c6ec01326b3d013ffe3aaae350b6a24c874672e8b49f1fb25.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="c8a4c849fca0e533ca40c5c70ca646537153768e7e483696aca96000c0cfea95.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="80ff48cf64a959b187b044d2fc11ff385aeeca34a0b36dd5088caaad3eec17f7.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="80ff48cf64a959b187b044d2fc11ff385aeeca34a0b36dd5088caaad3eec17f7.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="0424d5e028dbcb5ad056778f4750dd0ecfb46e60cbb8f33dfc72e49ffa473d01.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="0424d5e028dbcb5ad056778f4750dd0ecfb46e60cbb8f33dfc72e49ffa473d01.png" title=" Daniel enters '1602' into TEXT Suma" width="1034"/>
+                <img src="3733a2151f8c9167d8ddfc868fc755ee3afc2b70917e9acab56cf876484d811b.png" title=" Daniel enters '1602' into TEXT Suma (completed)" width="1034"/>
+                <img src="3733a2151f8c9167d8ddfc868fc755ee3afc2b70917e9acab56cf876484d811b.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="f07e7db34dc77f4cf802e6496a546dc90e4b2aae3183f828c5f3bbac393dbe62.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="d5755cf4f5c8ca4970351519c62969efc6aeb373a1d52df2c204aed5d3851192.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="80b6f496093536a0bb19e1f8b0a6145fb10a8c84124ac7dda5ea48029cc302d3.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="80b6f496093536a0bb19e1f8b0a6145fb10a8c84124ac7dda5ea48029cc302d3.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="d429e0a5f06856530129eb257f4612776b81f1e543f8ab94fb8471f6fd9d402a.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="d429e0a5f06856530129eb257f4612776b81f1e543f8ab94fb8471f6fd9d402a.png" title=" Daniel enters '1159' into TEXT Suma" width="1034"/>
+                <img src="0407d2ee2212d628a1a5c935324a7511b051748acdc59f7f461505b0a73a435f.png" title=" Daniel enters '1159' into TEXT Suma (completed)" width="1034"/>
+                <img src="0407d2ee2212d628a1a5c935324a7511b051748acdc59f7f461505b0a73a435f.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="0ff14fe4341867f25428e572b2846ec4f74a7fe824423ed83161e058aef1641d.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="24c02ed85e47f181c6cad7e57a026b9233c7521dfd9bfb03c2687f44c6cdee95.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="def1f2d13d138393a69dcb265e1ad9754c824fd7abbac4cacca56be94cfc6e04.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="def1f2d13d138393a69dcb265e1ad9754c824fd7abbac4cacca56be94cfc6e04.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="adf7e3704b6de97ff8ee54d1e1783577bb8ba5ffc2a4640eaeb81702b122f23d.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="adf7e3704b6de97ff8ee54d1e1783577bb8ba5ffc2a4640eaeb81702b122f23d.png" title=" Daniel enters '1560' into TEXT Suma" width="1034"/>
+                <img src="cf6b2ad17a8afdd966318bc3503510da68954ee8352a51890483bf1c7138bd17.png" title=" Daniel enters '1560' into TEXT Suma (completed)" width="1034"/>
+                <img src="cf6b2ad17a8afdd966318bc3503510da68954ee8352a51890483bf1c7138bd17.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="8b33fabc11ff8260d354adb248e440ba10805622325f2724f43f0dd682914ee9.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="a8a29f1f5699ba7e03b1cd8b18e9a80b5dd975408b217eb3b1eb600bf0da4aec.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="48d4b22eedfb9f57ee79c685910a085b3fc8ff04b780f651c9d6816c31171cc5.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="48d4b22eedfb9f57ee79c685910a085b3fc8ff04b780f651c9d6816c31171cc5.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="fc383ba98b08e72f8d30115769ee462b5ab8ffbe74c01e8537aadcd357ca65de.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="fc383ba98b08e72f8d30115769ee462b5ab8ffbe74c01e8537aadcd357ca65de.png" title=" Daniel enters '1350' into TEXT Suma" width="1034"/>
+                <img src="3ae60baa9ee402176bf8e33d50779632d84d2fe61201420a84d99767ef69d479.png" title=" Daniel enters '1350' into TEXT Suma (completed)" width="1034"/>
+                <img src="3ae60baa9ee402176bf8e33d50779632d84d2fe61201420a84d99767ef69d479.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="9f826af7ac5470419c1b97f51883c9760cfcb113d8ffb03bffb1ed35c5130003.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="070f6d8d9ff1ddefbf679e512fa13355635ca681dbbbe56d0379f2d310925147.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="59a1aae55a5b4c627797c376ef134b1a034d88cccbd2a49a2e56a1900a865e5f.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="59a1aae55a5b4c627797c376ef134b1a034d88cccbd2a49a2e56a1900a865e5f.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="8f1a16505d2580e339044cc47b9f7d2ef8ae3fa4f978d93b72a012c2b83f6dcc.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="8f1a16505d2580e339044cc47b9f7d2ef8ae3fa4f978d93b72a012c2b83f6dcc.png" title=" Daniel enters '1530' into TEXT Suma" width="1034"/>
+                <img src="05b70b0c182296843fba38c99335b7a9240cfc13710946d9d5594491ad9b3b6e.png" title=" Daniel enters '1530' into TEXT Suma (completed)" width="1034"/>
+                <img src="05b70b0c182296843fba38c99335b7a9240cfc13710946d9d5594491ad9b3b6e.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="394f1251809d24838eb4f7cce31638fac529984775474807ed7a6fe3c7c99bd3.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="aa91b84aac01926a6d21bde390875b32ec912fe068ec6fb7ca3761882fb9e7d0.png" title=" Daniel clicks on BTN CORRECT" width="1034"/>
+                <img src="a766fffa82404e6d2652143328ef819f79dcb83ae32af2dd39d2a9e1bf485ef2.png" title=" Daniel clicks on BTN CORRECT (completed)" width="1034"/>
+                <img src="a766fffa82404e6d2652143328ef819f79dcb83ae32af2dd39d2a9e1bf485ef2.png" title=" Daniel clicks on TEXT Suma" width="1034"/>
+                <img src="13479283ad461ba7182a606d3754f158302e992bef1d530ad04a1fc1af42d2e0.png" title=" Daniel clicks on TEXT Suma (completed)" width="1034"/>
+                <img src="13479283ad461ba7182a606d3754f158302e992bef1d530ad04a1fc1af42d2e0.png" title=" Daniel enters '1263' into TEXT Suma" width="1034"/>
+                <img src="9d440514c8abc48e7b02a9058cdc252ab1cbffb068697eda7418f0b4b0cce8da.png" title=" Daniel enters '1263' into TEXT Suma (completed)" width="1034"/>
+                <img src="9d440514c8abc48e7b02a9058cdc252ab1cbffb068697eda7418f0b4b0cce8da.png" title=" Daniel clicks on Send Suma" width="1034"/>
+                <img src="69646c1ec0790741d4b39c7757dac302028d9db5d52d31664b1dfde8aef95f90.png" title=" Daniel clicks on Send Suma (completed)" width="1034"/>
+                <img src="69646c1ec0790741d4b39c7757dac302028d9db5d52d31664b1dfde8aef95f90.png" title=" Daniel button (completed)" width="1034"/>
+                <img src="69646c1ec0790741d4b39c7757dac302028d9db5d52d31664b1dfde8aef95f90.png" title=" When Calculate the correct coordinate of the button and the sum (completed)" width="1034"/>
+                <img src="69646c1ec0790741d4b39c7757dac302028d9db5d52d31664b1dfde8aef95f90.png" title=" Then get a hash" width="1034"/>
+                <img src="69646c1ec0790741d4b39c7757dac302028d9db5d52d31664b1dfde8aef95f90.png" title=" Then answer: <span class='success-color'>SUCCESS</span>" width="1034"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.5.1</span>
+</div>
+</body>
+</html>
